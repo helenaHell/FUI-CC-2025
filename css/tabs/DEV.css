@@ -1,0 +1,45 @@
+/* DEV TERMINAL - VERT */
+.dev-terminal {
+  color: var(--text-glow);
+  font-family: monospace;
+}
+
+.term-content {
+  white-space: pre;
+  overflow-y: auto;
+  max-height: 80%;
+}
+
+/* DEV LOGS - ROUGE/ROSE */
+.dev-logs {
+  color: #ff4466;
+  font-family: monospace;
+}
+
+.logs-content {
+  white-space: pre-wrap;
+  overflow-y: auto;
+  max-height: 80%;
+}
+
+/* DEV EDITOR */
+.dev-editor code {
+  color: var(--text-glow);
+  font-family: monospace;
+  font-size: 12px;
+}
+
+/* DEV FILES */
+.dev-files {
+  color: var(--text-glow);
+  font-family: monospace;
+}
+
+.file-row {
+  cursor: pointer;
+  padding: 2px 0;
+}
+
+.file-row:hover {
+  background: rgba(0, 255, 136, 0.1);
+}

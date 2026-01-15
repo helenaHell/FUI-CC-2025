@@ -1,0 +1,254 @@
+/* =====================================================
+   ROOT COLORS — SINGLE SOURCE OF TRUTH
+===================================================== */
+:root {
+  /* --color-bg-absolute: #ff0606;
+  --color-bg-main: #00ffa2;*/
+  --color-bg-bars: #000f0a;
+
+  --color-text-dim: #1c7a5a;
+  --color-text-muted: #0e4f39;
+  --color-text-white: #eafff6;
+
+  --color-border-soft: rgba(0, 255, 136, 0.15);
+  --color-border-hard: rgba(0, 255, 136, 0.3);
+
+  --tab-active-bg: #00d3279f; /* highlighted bg tab + bg performance stats */
+
+  /* COLROS */
+  --color-black: #0000009f;
+  --color-white: #ffffff;
+
+  /* HIGHLIGHT */
+  --bg-transparent-green: #00ff8840;
+  --bg-green: #075430;
+
+  --color-text-main: #00ff88; /* !!Bien aussi pour main text  */
+  --main-green: #0eac43; /* text : button tab (without higlight) + text secondary bar */
+
+  /* GLOW */
+  --text-glow: #9cff9c;
+  --text-glow2: #6aff6a;
+}
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  /* background: var(--color-bg-main); */
+  background: transparent;
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--color-text-main);
+  overflow: hidden;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--color-bg-bars);
+  background-image: url("../assets/bg-CC.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -1;
+}
+
+/* .bottom-bar {
+  position: absolute;
+  bottom: 0;  
+  left: 0;
+  right: 0;
+}
+.fb-footer-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+} */
+
+/* =====================================================
+   TOP BAR — TABS + STATS
+===================================================== */
+#top-bar {
+  height: 23px;
+  background: var(--color-black);
+  /* opacity: 0.96; */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border-bottom: 1.5px solid var(--tab-active-bg);
+}
+
+/* ---------------- TABS ---------------- */
+#tabs {
+  display: flex;
+  height: 100%;
+}
+
+#tabs button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: 100%;
+  color: var(--main-green);
+  cursor: pointer;
+  border-right: 1px solid var(--color-border-soft);
+}
+
+#tabs button:last-child {
+  border-right: none;
+}
+
+/* small square indicator */
+.tab-icon {
+  width: 6px;
+  height: 6px;
+  margin-bottom: 10px;
+  border: 1px solid var(--color-text-white);
+}
+
+/* number */
+.tab-number {
+  color: var(--color-text-white);
+}
+
+/* label */
+.tab-label {
+  color: var(--color-text-main);
+}
+
+/* ACTIVE TAB — movie accurate */
+#tabs button.active {
+  background: var(--main-green);
+}
+
+#tabs button.active .tab-number,
+#tabs button.active .tab-label {
+  color: var(--text-glow2);
+}
+
+#tabs button.active .tab-icon {
+  background: var(--color-text-white);
+  /* border-color: var(--color-text-white); */
+}
+
+/* ---------------- PERFORMANCE STATS ---------------- */
+#performance-stats {
+  background: var(--tab-active-bg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px;
+  /* color: var(--color-text-dim); */
+  color: var(--text-glow2);
+}
+
+#performance-stats span {
+  white-space: nowrap;
+  padding-right: 18px;
+  border-right: 1px solid var(--text-glow2);
+}
+
+#performance-stats span:last-child {
+  border-right: none;
+}
+
+/* =====================================================
+   SECONDARY BAR — SESSION / STATUS
+===================================================== */
+#secondary-bar {
+  background: transparent;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  padding-top: 10px;
+}
+
+.status-label {
+  color: var(--text-glow);
+}
+
+.status-item,
+.status-info {
+  color: var(--main-green);
+  border-left: 1px solid var(--main-green);
+  height: 13px;
+  padding-left: 10px;
+}
+
+/* =====================================================
+   FOOTER BAR (ALWAYS VISIBLE)
+===================================================== */
+#footer-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-black);
+  opacity: 0.8;
+  padding: 6px 12px;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-tip {
+  color: var(--tab-active-bg);
+  padding-top: 1px;
+}
+
+.footer-function-keys {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 5px;
+  border-top: 1px solid var(--tab-active-bg);
+  /* gap: 5px; */
+}
+
+.fkey-num {
+  color: var(--text-glow2);
+}
+
+.fkey-label {
+  background-color: var(--tab-active-bg);
+  color: var(--color-white);
+  padding: 2px 0px;
+}
+
+#push-indicator {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-family: monospace;
+  background: #111;
+  color: #777;
+  border: 1px solid #333;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+body.push-on #push-indicator {
+  color: #0f0;
+  border-color: #0f0;
+  opacity: 1;
+}

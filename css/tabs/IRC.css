@@ -1,0 +1,506 @@
+:root {
+  --bg-Dgreen: #30951e;
+  --main-green: #0eac43;
+  --text-red: #ff6b6b;
+  --border-teal: #008080;
+  --color-bg-main: #00160e;
+
+  /* ===============================
+TEXT
+=============================== */
+
+  /* GLOW */
+  --text-glow: #9cff9c;
+  --text-glow2: #6aff6a;
+
+  /* HIGHLIGHT */
+  --bg-green: #00ff8840;
+  /* ===============================
+White
+=============================== */
+  /* --text-white: #f5fff3; */
+  --text-white: #ffffff;
+}
+
+/* Divider */
+.is-divider {
+  height: 1px;
+  background: rgba(156, 255, 156, 0.3);
+  margin: 6px 0;
+}
+
+/* ===============================
+   IRC — GLOBAL WINDOW STYLE
+=============================== */
+
+.fui-window {
+  color: var(--main-green);
+  background: #00160e;
+  border: 1px solid rgba(0, 255, 136, 0.25);
+  padding: 6px;
+  overflow: hidden;
+}
+.fui-window pre {
+  margin: 0;
+  white-space: pre;
+  font-size: 11px;
+}
+/* subtle CRT feeling */
+/* .fui-window::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 136, 0.04),
+    rgba(0, 255, 136, 0.04) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+} */
+
+/* ===============================
+   IRC CHAT
+=============================== */
+
+.irc-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.irc-line {
+  white-space: pre;
+}
+
+.nick {
+  color: #aaffee;
+}
+
+.time {
+  color: #0e4f39;
+}
+
+/* ===============================
+   IRC USERS
+=============================== */
+
+.irc-users {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user {
+  color: #00ffaa;
+}
+
+.user.op {
+  color: #ffcc66;
+}
+/* ===============================
+   IRC STATS
+=============================== */
+
+#irc-stats {
+  padding: 6px;
+  color: var(--text-white);
+  height: 100%;
+  overflow: hidden;
+}
+
+.irc-system {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+.top-stats {
+  display: grid;
+  grid-template-columns: 60% 100%;
+  margin-bottom: 8px;
+  margin-right: 10px;
+}
+
+.bars {
+  display: grid;
+  grid-template-columns: 5ch 1fr;
+  row-gap: 6px;
+  align-items: center;
+}
+
+.bar-container span {
+  display: block;
+  height: 12px;
+  background: var(--text-white);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+  row-gap: 4px;
+}
+
+.processes {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow-y: auto;
+}
+
+.header-stats,
+.row {
+  display: grid;
+  grid-template-columns: 60px 80px 50px 40px 90px 70px 70px 40px 60px 60px 70px 70px 100px;
+  gap: 8px;
+}
+
+.header-stats {
+  background: var(--bg-green);
+  color: var(--color-bg-main);
+  padding: 2px 4px;
+  position: sticky;
+  top: 0;
+}
+
+.row.hot {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.process-list {
+  max-height: 100%;
+  overflow-y: auto;
+  scroll-padding-top: 32px;
+}
+.row.hl {
+  background: rgba(0, 255, 0, 0.12);
+  outline: 1px solid rgba(0, 255, 0, 0.35);
+}
+.row.hot {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===============================
+   Twitter
+=============================== */
+#irc-twitter {
+  padding: 3px 4px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.header-twitter {
+  background-color: var(--bg-green);
+  color: var(--text-white);
+
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.twitter {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ddd_wiki-fist {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.breaking {
+  color: var(--text-white);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.user-names {
+  color: var(--text-white);
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+}
+.user-names.highlight1 {
+  background-color: #ff3d3d;
+}
+.user-names.highlight2 {
+  background-color: #3f92ff;
+}
+.user-names.highlight3 {
+  background-color: #ff5e01;
+}
+.user-names.highlight4 {
+  background-color: #ae5dff;
+}
+.user-names.highlight5 {
+  background-color: #ff6b7f;
+}
+.user-names.highlight6 {
+  background-color: #ff82c1;
+}
+.user-names.highlight7 {
+  background-color: #ffeb6b;
+}
+.user-names.highlight8 {
+  background-color: #a953ff;
+}
+.user-names.highlight9 {
+  background-color: #3431fb;
+}
+.user-names.highlight10 {
+  background-color: #ffba82;
+}
+
+.tweet-content {
+  color: var(--text-white);
+  font-size: 12px;
+
+  margin: 2px 0;
+}
+
+.tweet-timestamp {
+  color: var(--main-green);
+  font-size: 11px;
+}
+
+.seperator {
+  border-top: 1px dashed var(--text-white);
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+/* Scrollbar */
+#irc-twitter::-webkit-scrollbar {
+  width: 6px;
+}
+
+#irc-twitter::-webkit-scrollbar-track {
+  background: none;
+  border: 1px solid var(--bg-Dgreen);
+}
+
+#irc-twitter::-webkit-scrollbar-thumb {
+  background: var(--text-glow);
+}
+
+/* ===============================
+   IRC FILES
+=============================== */
+
+.files-container {
+  color: var(--main-green);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.fb-header,
+.fb-row,
+.fb-body-separators {
+  display: grid;
+  grid-template-columns: 1px 2fr 120px 120px;
+  align-items: center;
+}
+
+.fb-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.fb-h-n {
+  text-align: left;
+}
+
+.fb-h-name {
+  text-align: left;
+  padding-left: 10vw;
+}
+
+.fb-h-size {
+  text-align: right;
+  padding-right: 1vw;
+}
+
+.fb-h-modify {
+  text-align: center;
+}
+
+/* Scroll */
+.fb-body {
+  position: relative;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 80px; /* Space pour le footer fixe */
+  z-index: 1;
+}
+
+.fb-row {
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  transition: background-color 0.15s;
+}
+
+.fb-row:hover {
+  background: var(--tab-active-bg);
+  color: var(--text-glow);
+}
+
+.fb-row.selected {
+  background: rgba(255, 140, 0, 0.3);
+  color: var(--text-glow);
+  outline: 1px solid #ff8c00;
+}
+
+.fb-n {
+  padding-left: 1px;
+}
+
+.fb-name {
+  padding: 2px 6px;
+  text-align: left;
+}
+
+.fb-size {
+  padding: 2px 6px;
+  text-align: right;
+}
+
+.fb-modify {
+  padding: 2px 6px;
+  text-align: center;
+}
+
+/* Separators */
+.fb-body-separators {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.fb-sep-line {
+  border-left: 1px solid var(--bg-Dgreen);
+  height: 100%;
+}
+
+/* Footer FIXE */
+.fb-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-bg-bars);
+  z-index: 3;
+  padding: 4px 0;
+}
+
+.fb-footer-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.fb-line {
+  height: 1px;
+  background: var(--text-white);
+  padding: 0 6px;
+  /* opacity: 0.7; */
+}
+
+.fb-line.short {
+  width: 70%;
+}
+
+.fb-line-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+/* Separateurs verticaux qui descendent jusqu'au footer */
+.fb-body-separators::before,
+.fb-body-separators::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -80px; /* Descend dans le footer */
+  width: 1px;
+  background: var(--bg-Dgreen);
+}
+
+.fb-body-separators::before {
+  left: calc(1px + 2fr); /* Entre Name et Size */
+}
+
+.fb-body-separators::after {
+  left: calc(1px + 2fr + 120px); /* Entre Size et Modify */
+}
+/* ===============================
+   IRC INTERFACE STATUS
+=============================== */
+
+.interface-status {
+  font-size: clamp(11px, 1.2vw, 13px);
+  color: var(--text-glow);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Section titles */
+.is-section-title {
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+/* Shared grid logic */
+.is-header,
+.is-row {
+  display: grid;
+  grid-template-columns:
+    minmax(90px, 1.2fr)
+    minmax(60px, 0.7fr)
+    minmax(100px, 1.2fr)
+    minmax(140px, 2fr)
+    minmax(70px, 0.8fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.is-row .state {
+  color: var(--text-glow2);
+}
+
+/* Body */
+.is-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Footer */
+.is-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  opacity: 0.7;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .is-header,
+  .is-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

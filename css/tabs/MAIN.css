@@ -1,0 +1,564 @@
+/* =====================================================
+   MAIN TAB - GLOBAL STYLES
+   ===================================================== */
+
+:root {
+  --main-divider: rgba(156, 255, 156, 0.3);
+  --main-header-bg: var(--bg-green);
+  --main-text: var(--text-white);
+  --main-dim: var(--main-green);
+}
+
+/* =====================================================
+   SYSTEM MONITOR
+   ===================================================== */
+
+.main-system-monitor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.monitor-header {
+  background: var(--main-header-bg);
+  color: var(--color-bg-main);
+  padding: 4px 8px;
+  font-weight: bold;
+}
+
+.monitor-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.monitor-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  gap: 8px;
+  align-items: center;
+}
+
+.monitor-row .label {
+  color: var(--main-dim);
+}
+
+.monitor-row .bar {
+  color: var(--text-glow);
+}
+
+.monitor-row .value {
+  color: var(--main-text);
+  text-align: right;
+}
+
+.monitor-divider {
+  height: 1px;
+  background: var(--main-divider);
+  margin: 8px 0;
+}
+
+.monitor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-row {
+  display: flex;
+  gap: 8px;
+}
+
+.info-label {
+  color: var(--main-dim);
+  min-width: 80px;
+}
+
+.info-value {
+  color: var(--main-text);
+}
+
+/* =====================================================
+   NETWORK ACTIVITY
+   ===================================================== */
+
+.main-network {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.network-header {
+  background: var(--main-header-bg);
+  color: var(--color-bg-main);
+  padding: 4px 8px;
+  font-weight: bold;
+}
+
+.network-stats {
+  display: flex;
+  gap: 12px;
+  color: var(--main-dim);
+}
+
+.network-divider {
+  height: 1px;
+  background: var(--main-divider);
+}
+
+.network-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.network-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 20px 1fr 100px 120px;
+  gap: 6px;
+  padding: 2px 0;
+  align-items: center;
+}
+
+.net-type {
+  color: var(--text-glow2);
+  font-weight: bold;
+}
+
+.net-local,
+.net-remote {
+  color: var(--main-text);
+}
+
+.net-arrow {
+  color: var(--main-dim);
+  text-align: center;
+}
+
+.net-status {
+  color: var(--main-dim);
+}
+
+.net-bytes {
+  color: var(--text-glow);
+  text-align: right;
+}
+
+/* =====================================================
+   MISSIONS / OPERATIONS
+   ===================================================== */
+
+.main-missions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.missions-header {
+  background: var(--main-header-bg);
+  color: var(--color-bg-main);
+  padding: 4px 8px;
+  font-weight: bold;
+}
+
+.missions-summary {
+  display: flex;
+  gap: 12px;
+  color: var(--main-dim);
+}
+
+.missions-divider {
+  height: 1px;
+  background: var(--main-divider);
+}
+
+.missions-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.missions-empty {
+  color: var(--main-dim);
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+
+.mission-row {
+  border: 1px solid var(--main-divider);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mission-name {
+  color: var(--text-glow2);
+  font-weight: bold;
+}
+
+.mission-priority {
+  color: var(--text-red);
+}
+
+.mission-type {
+  color: var(--main-dim);
+}
+
+.mission-progress {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.progress-bar {
+  flex: 1;
+  color: var(--text-glow);
+}
+
+.progress-percent {
+  color: var(--main-text);
+  min-width: 40px;
+  text-align: right;
+}
+
+.mission-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mission-status {
+  padding: 2px 6px;
+  font-weight: bold;
+}
+
+.status-active {
+  color: var(--text-glow2);
+  background: rgba(106, 255, 106, 0.2);
+}
+
+.status-complete {
+  color: var(--text-glow);
+  background: rgba(14, 172, 67, 0.2);
+}
+
+.status-failed {
+  color: var(--text-red);
+  background: rgba(255, 107, 107, 0.2);
+}
+
+.status-pending {
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.status-idle {
+  color: var(--main-dim);
+  background: rgba(14, 79, 57, 0.2);
+}
+
+.mission-eta {
+  color: var(--main-dim);
+}
+
+/* =====================================================
+   ACTIVITY LOG
+   ===================================================== */
+
+.main-activity-log {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.log-header {
+  background: var(--main-header-bg);
+  color: var(--color-bg-main);
+  padding: 4px 8px;
+  font-weight: bold;
+}
+
+.log-stats {
+  display: flex;
+  gap: 12px;
+  color: var(--main-dim);
+}
+
+.log-divider {
+  height: 1px;
+  background: var(--main-divider);
+}
+
+.log-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.log-row {
+  display: grid;
+  grid-template-columns: 60px 70px 1fr;
+  gap: 8px;
+  padding: 2px 4px;
+  align-items: center;
+}
+
+.log-time {
+  color: var(--main-dim);
+}
+
+.log-type {
+  font-weight: bold;
+}
+
+.log-message {
+  color: var(--main-text);
+}
+
+.log-info .log-type {
+  color: var(--text-glow);
+}
+
+.log-warning .log-type {
+  color: #ffcc66;
+}
+
+.log-error .log-type {
+  color: var(--text-red);
+}
+
+.log-success .log-type {
+  color: var(--text-glow2);
+}
+
+.log-security .log-type {
+  color: #ff82c1;
+}
+
+/* =====================================================
+   TERMINAL
+   ===================================================== */
+
+.main-terminal {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.terminal-header {
+  background: var(--main-header-bg);
+  color: var(--color-bg-main);
+  padding: 4px 8px;
+  font-weight: bold;
+}
+
+.terminal-info {
+  display: flex;
+  gap: 12px;
+  color: var(--main-dim);
+}
+
+.terminal-divider {
+  height: 1px;
+  background: var(--main-divider);
+}
+
+.terminal-output-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terminal-output {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.output-command {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.output-time {
+  color: var(--main-dim);
+}
+
+.output-prompt {
+  color: var(--text-glow2);
+  font-weight: bold;
+}
+
+.output-cmd {
+  color: var(--main-text);
+}
+
+.output-result {
+  color: var(--text-glow);
+  padding-left: 20px;
+  white-space: pre-wrap;
+}
+
+.output-error .output-result {
+  color: var(--text-red);
+}
+
+.terminal-input-line {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 4px;
+  border-top: 1px solid var(--main-divider);
+}
+
+.input-prompt {
+  color: var(--text-glow2);
+  font-weight: bold;
+}
+
+.input-text {
+  color: var(--main-text);
+  flex: 1;
+}
+
+.cursor {
+  color: var(--text-glow);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.terminal-hint {
+  color: var(--main-dim);
+  font-style: italic;
+  text-align: center;
+}
+
+/* =====================================================
+   GLOBE / WORLD MAP
+   ===================================================== */
+
+.main-globe {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.globe-header {
+  background: var(--main-header-bg);
+  color: var(--color-bg-main);
+  padding: 4px 8px;
+  font-weight: bold;
+}
+
+.globe-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.globe-art pre {
+  color: var(--text-glow);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.globe-divider {
+  height: 1px;
+  background: var(--main-divider);
+}
+
+.globe-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-label {
+  color: var(--main-dim);
+}
+
+.stat-value {
+  color: var(--main-text);
+  font-weight: bold;
+}
+
+.globe-connections {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.connections-title {
+  color: var(--main-dim);
+  margin-bottom: 4px;
+}
+
+.connections-empty {
+  color: var(--main-dim);
+  font-style: italic;
+  text-align: center;
+  padding: 10px;
+}
+
+.globe-connection {
+  display: grid;
+  grid-template-columns: 40px 30px 40px 1fr;
+  gap: 6px;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.conn-from,
+.conn-to {
+  color: var(--text-glow2);
+  font-weight: bold;
+}
+
+.conn-arrow {
+  color: var(--main-dim);
+  text-align: center;
+}
+
+.conn-strength {
+  color: var(--text-glow);
+}
