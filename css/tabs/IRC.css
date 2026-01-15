@@ -387,11 +387,6 @@ White
   pointer-events: none;
 }
 
-.fb-sep-line {
-  border-left: 1px solid var(--bg-Dgreen);
-  height: 100%;
-}
-
 /* Footer FIXE */
 .fb-footer {
   position: absolute;
@@ -403,16 +398,26 @@ White
   padding: 4px 0;
 }
 
-.fb-footer-row {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 8px;
+.fb-body-separators .fb-sep-line {
+  position: absolute;
+  top: -10px; /* Remonte jusqu'au header */
+  bottom: -80px; /* Descend jusqu'au bas du footer */
+  width: 1px;
+  background: var(--bg-Dgreen);
+  pointer-events: none;
+}
+
+.fb-body-separators .fb-sep-line:first-of-type {
+  grid-column: 3; /* Entre Name et Size */
+}
+
+.fb-body-separators .fb-sep-line:last-of-type {
+  grid-column: 4; /* Entre Size et Modify */
 }
 
 .fb-line {
   height: 1px;
   background: var(--text-white);
-  padding: 0 6px;
   /* opacity: 0.7; */
 }
 
@@ -425,25 +430,6 @@ White
   justify-content: space-between;
   align-items: center;
   margin-top: 4px;
-}
-
-/* Separateurs verticaux qui descendent jusqu'au footer */
-.fb-body-separators::before,
-.fb-body-separators::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: -80px; /* Descend dans le footer */
-  width: 1px;
-  background: var(--bg-Dgreen);
-}
-
-.fb-body-separators::before {
-  left: calc(1px + 2fr); /* Entre Name et Size */
-}
-
-.fb-body-separators::after {
-  left: calc(1px + 2fr + 120px); /* Entre Size et Modify */
 }
 /* ===============================
    IRC INTERFACE STATUS
